@@ -61,7 +61,7 @@ Feature File
 createNewPost.feature
 Step Definition : createNewPost.py
 It can be executed directly from pycharm terminal with following commands
-behave .\feature\createNewPost.feature 
+behave -f allure_behave.formatter:AllureFormatter -o reports/ .\feature\verifyLogin.feature
 
 Functionality
 #Click on “Create Post”
