@@ -44,11 +44,15 @@ def SubmitLogin(context):
 
 @then('User Must Successfully Login to His Dashboard Page')
 def VerifySuccessfulLogin(context):
-
-    context.driver.find_element(By.XPATH, "//a[@id='profile-menu-icon']").click()
-    WebDriverWait(context.driver, 30).until(
-        EC.presence_of_element_located((By.XPATH, "//a[contains(.,'Sign out')]")))
-    context.driver.find_element(By.XPATH, "//a[contains(.,'Sign out')]").click()
-    time.sleep(5)
-    # Change to Explicit Wait Here wait for some element to be available
+    try:
+        context.driver.find_element(By.XPATH, "//a[@id='profile-menu-icon']").click()
+        WebDriverWait(context.driver, 30).until(
+            EC.presence_of_element_located((By.XPATH, "//a[contains(.,'Sign out')]")))
+        context.driver.find_element(By.XPATH, "//a[contains(.,'Sign out')]").click()
+        time.sleep(5)
+    except:
+        # Change to Explicit Wait Here wait for some element to be available
+        context.driver.close()
+        assert False, "Login Failed"
     context.driver.close()
+    assert True, "Login Passed"
