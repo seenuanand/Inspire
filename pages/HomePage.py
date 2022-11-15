@@ -3,11 +3,19 @@ from selenium.webdriver.common.by import By
 
 
 class HomePage(BasePage):
-    TXT_DASHBOARD = (By.XPATH, "//div[@id='content']/div/div[1]/h1")
+    SIGNIN_BTN = (By.ID, "logIn")
+    SIGNUP_BTN = (By.ID, "signUp")
+    SEARCH_TXT = (By.ID, "search_textbox")
+    DISCOVER_MENU = (By.ID, "toggle_discover_menu")
+    COMMUNITY_MENU = (By.ID, "toggle_community_menu")
 
     def __init__(self, driver):
         super().__init__(driver)
 
     def validatePageLoaded(self):
-        self.verify_element_displayed(self.TXT_DASHBOARD)
-        assert self.get_element_text(self.TXT_DASHBOARD) == "Dashboard"
+        self.verify_element_displayed(self.COMMUNITY_MENU)
+        assert self.get_element_text(self.COMMUNITY_MENU) == "Communities"
+
+    def validateElementEnabled_Disabled(self):
+        elementState = self.verify_element_enabled(self.SIGNIN_BTN)
+        return elementState

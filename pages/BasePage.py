@@ -44,3 +44,10 @@ class BasePage:
             return element.is_displayed()
         except:
             return False
+
+    def verify_element_enabled(self, by_locator):
+        try:
+            element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+            return element.is_enabled()
+        except:
+            return False
