@@ -25,19 +25,17 @@ https://github.com/seenuanand/Inspire
 
 Accessing the Project 
 
-Directly Clone the Project from Git Location
-Create a Local Brnach
+#### Directly Clone the Project from Git Location
+#### Create a Local Brnach
 
-Can also Download as Zip
-Extract and copy it to your shared location
-Open the project in PyCharm
+#### Can also Download as Zip
+#### Extract and copy it to your shared location
+#### Open the project in PyCharm
 
-Login Credentials for the Application
-UserName : srinivas.anand1@gmail.com
-Password : Srinivas@12345
+#### Login Credentials for the Application
+#### UserName : srinivas.anand1@gmail.com
+#### Password : Srinivas@12345
 
-Execution
-testPostBusinessProcess.py is a Vanila Script for analysing and it can be used as a Business Process Execution for Post Functionality
 # Functionality Business Process to Test
 #### Step 1: Click on “Create Post”
 #### Step 2: Verify the overlay pops up.
@@ -66,6 +64,7 @@ testPostBusinessProcess.py is a Vanila Script for analysing and it can be used a
 #### Allure json files are stored here
 
 # For Inspire Candidate Test Execute the Below scripts
+#### testPostBusinessProcess.py is a Vanila Script for analysing and it can be used as a Business Process Execution for Post Functionality
 #### webDriverManagerCheck.py is a  Driver Manager Checking script to avoid downloading the Drivers (Not Implimented yet to functionality)
 #### The above scripts can be executed directly from command prompt
 		C:/ProjectLocation/testPostBusinessProcess.py
