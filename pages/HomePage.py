@@ -23,3 +23,6 @@ class HomePage(BasePage):
     def validateElementEnabled_Disabled(self):
         elementState = self.verify_element_enabled(self.SIGNIN_BTN)
         return elementState
+
+    def click_Login_Button(self):
+        self.click_element(self.SIGNIN_BTN)

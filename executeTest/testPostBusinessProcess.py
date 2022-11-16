@@ -113,6 +113,7 @@ class TestInspireTestScript():
                 self.driver.find_element(By.XPATH, "//a[@id='profile-menu-icon']").click()
                 self.driver.find_element(By.XPATH, "//a[@id='logOut']").click()
                 self.driver.close()
+
             except TimeoutException:
                 print("Loading took too much time to Load to Community Page!")
                 self.driver.close()

@@ -9,6 +9,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from configuration.config import TestData
 from pages.HomePage import HomePage
+from pages.LoginPage import LoginPage
+
 
 @given('User Launches Chrome Browser')
 def Launch_Browser(context):
@@ -44,30 +46,29 @@ def Launch_Browser(context):
 def VerifyHomepage(context):
     try:
         context.driver.get(TestData.URL)
-        context.homepage = HomePage(context.driver)
-        context.driver.find_element(By.ID, "logIn").click()
+        context.homePage = HomePage(context.driver)
+        context.loginPage = LoginPage(context.driver)
+        context.homePage.click_Login_Button()
+        # context.driver.find_element(By.ID, "logIn").click()
     except:
         context.driver.close()
         assert False, "Test is failed in Loading the Home Page"
 
+
 @when('User Enters Valid User Name "{userName}" and Password "{password}"')
 def LoginWithCredentials(context, userName, password):
-    WebDriverWait(context.driver, 30).until(
-        EC.presence_of_element_located((By.ID, "email")))
-    context.driver.find_element(By.ID, "email").clear()
-    context.driver.find_element(By.ID, "pw").clear()
-    context.driver.find_element(By.ID, "email").send_keys(userName)
-    context.driver.find_element(By.ID, "pw").send_keys(password)
+    try:
+        context.loginPage.enter_login_credentials(userName, password)
+    except:
+        context.driver.close()
+        assert False, "Test is failed in enter login credentials"
     time.sleep(10)
     # Change to Explicit Wait Here wait for some element to be available
 
 
 @when('User Click the Login Button')
 def SubmitLogin(context):
-    context.driver.find_element(By.ID, "login_submit").click()
-    WebDriverWait(context.driver, 30).until(
-        EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Blood Pressure")))
-    time.sleep(10)
+    context.loginPage.enter_login()
     # Remove This used for Debugging
 
 

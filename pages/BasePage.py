@@ -27,6 +27,12 @@ class BasePage:
         except EX as e:
             print("Exception! Can't click on the element")
 
+    def clear_element_text(self, by_locator):
+        try:
+            WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).clear()
+        except EX as e:
+            print("Exception! Can't clear the element")
+
     def get_element_text(self, by_locator):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
         return element.text
