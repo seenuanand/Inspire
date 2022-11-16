@@ -8,6 +8,10 @@ class HomePage(BasePage):
     SEARCH_TXT = (By.ID, "search_textbox")
     DISCOVER_MENU = (By.ID, "toggle_discover_menu")
     COMMUNITY_MENU = (By.ID, "toggle_community_menu")
+    FIND_SUPPORT_TXT = (By.ID, "searchBlock")
+    SEARCH_OUR_COMMUNITY_BTN = (By.XPATH, "//button[contains(.,'Search Our Communities')]")
+    LEARN_MORE_ANCHOR = (By.XPATH, "//a[@target='_blank'][contains(.,'Learn more')]")
+    BECOME_PARTNER_BTN = (By.XPATH, "//button[contains(.,'Become a Partner')]")
 
     def __init__(self, driver):
         super().__init__(driver)

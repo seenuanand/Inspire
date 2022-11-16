@@ -5,22 +5,50 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import random
-
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+from configuration.config import TestData
+from pages.HomePage import HomePage
 
 @given('User Launches Chrome Browser')
-def LaunchBrowser(context):
-    context.driver = webdriver.Chrome()
+def Launch_Browser(context):
+    # Driver Option Selected From Configuration File
+    if TestData.BROWSER == 'chrome':
+        context.driver = webdriver.Chrome(executable_path=TestData.CHROME_EXECUTABLE_PATH)
+    elif TestData.BROWSER == 'firefox':
+        context.driver = webdriver.Firefox(executable_path=TestData.FIREFOX_EXECUTABLE_PATH)
+    else:
+        raise ValueError('Browser is not supported')
+
+    # Can be Used when the Driver is copied to environment Script folder
+    # if TestData.BROWSER == 'chrome':
+    #     context.driver = webdriver.Chrome()
+    # elif TestData.BROWSER == 'firefox':
+    #     context.driver = webdriver.Firefox()
+    # else:
+    #     raise ValueError('Browser is not supported')
+
+    # Driver Option To Install latest Driver from Web Driver Manager
+    # if TestData.BROWSER == 'chrome':
+    #     context.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    # elif TestData.BROWSER == 'firefox':
+    #     context.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    # else:
+    #     raise ValueError('Browser is not supported')
+
     context.driver.delete_all_cookies()
     context.driver.maximize_window()
 
 
 @when('User Clicks the Login Button in the Home Page')
 def VerifyHomepage(context):
-    context.driver.get("https://www.inspire.com/")
-    WebDriverWait(context.driver, 30).until(
-        EC.presence_of_element_located((By.ID, "logIn")))
-    context.driver.find_element(By.ID, "logIn").click()
-
+    try:
+        context.driver.get(TestData.URL)
+        context.homepage = HomePage(context.driver)
+        context.driver.find_element(By.ID, "logIn").click()
+    except:
+        context.driver.close()
+        assert False, "Test is failed in Loading the Home Page"
 
 @when('User Enters Valid User Name "{userName}" and Password "{password}"')
 def LoginWithCredentials(context, userName, password):
