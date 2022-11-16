@@ -29,8 +29,8 @@ Accessing the Project
 #### Create a Local Brnach
 
 #### Can also Download as Zip
-#### Extract and copy it to your shared location
-#### Open the project in PyCharm
+	Extract and copy it to your shared location
+	Open the project in PyCharm
 
 #### Login Credentials for the Application
 #### UserName : srinivas.anand1@gmail.com
