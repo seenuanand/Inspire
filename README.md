@@ -38,16 +38,16 @@ Password : Srinivas@12345
 
 Execution
 testPostBusinessProcess.py is a Vanila Script for analysing and it can be used as a Business Process Execution for Post Functionality
-# Functionality
-# Click on “Create Post”
-# Verify the overlay pops up.
-# Click on the "Choose Community" and choose a community you joined in Step 1.
-# Click on the "Choose Topic" and choose any topic.
-# Create a title in the title input field.
-# Write some content in the body textarea.
-# Click the "Privacy" dropdown menu and choose the "Inspire Friends" option
-# Click Post
-# Verify that your post shows up at the top of the lists of posts in your account by looking for the text you used to input. 
+# Functionality Business Process to Test
+## Step 1: Click on “Create Post”
+## Step 2: Verify the overlay pops up.
+## Step 3: Click on the "Choose Community" and choose a community you joined in Step 1.
+## Step 4: Click on the "Choose Topic" and choose any topic.
+## Step 5: Create a title in the title input field.
+## Step 6: Write some content in the body textarea.
+## Step 7: Click the "Privacy" dropdown menu and choose the "Inspire Friends" option
+## Step 8: Click Post
+## Step 9: Verify that your post shows up at the top of the lists of posts in your account by looking for the text you used to input. 
 
 webDriverManagerCheck.py is a  Driver Manager Checking script to avoid downloading the Drivers (Not Implimented yet to functionality)
 
@@ -62,17 +62,6 @@ createNewPost.feature
 Step Definition : createNewPost.py
 It can be executed directly from pycharm terminal with following commands
 behave -f allure_behave.formatter:AllureFormatter -o reports/ .\feature\verifyLogin.feature
-
-Functionality
-# Click on “Create Post”
-# Verify the overlay pops up.
-# Click on the "Choose Community" and choose a community you joined in Step 1.
-# Click on the "Choose Topic" and choose any topic.
-# Create a title in the title input field.
-# Write some content in the body textarea.
-# Click the "Privacy" dropdown menu and choose the "Inspire Friends" option
-# Click Post
-# Verify that your post shows up at the top of the lists of posts in your account by looking for the text you used to input.     
 
 You can also run 
 verifyHomePage.feature
