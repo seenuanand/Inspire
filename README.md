@@ -49,7 +49,23 @@ testPostBusinessProcess.py is a Vanila Script for analysing and it can be used a
 #### Step 8: Click Post
 #### Step 9: Verify that your post shows up at the top of the lists of posts in your account by looking for the text you used to input. 
 
-webDriverManagerCheck.py is a  Driver Manager Checking script to avoid downloading the Drivers (Not Implimented yet to functionality)
+# Structure
+### browserDriver
+#### Storing all the Browser Drivers Chrome, IE, Edge, Firefox
+### configuration
+#### Storing all the TestData and Global  Environment Parameters
+### executeTest
+#### Vanila Test Scripts and Can be used as complete Business Process Scripts
+### feature
+#### Step Definition
+##### All step python files are stored here
+#### Feature Files are stored here
+### pages
+#### All locators for the individual pages are stored here
+### reports
+#### Allure json files are stored here
+
+#### webDriverManagerCheck.py is a  Driver Manager Checking script to avoid downloading the Drivers (Not Implimented yet to functionality)
 
 The above scripts can be executed directly from command prompt
 C:/ProjectLocation/testPostBusinessProcess.py
