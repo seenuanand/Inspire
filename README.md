@@ -65,27 +65,28 @@ testPostBusinessProcess.py is a Vanila Script for analysing and it can be used a
 ### reports
 #### Allure json files are stored here
 
+# For Inspire Candidate Test Execute the Below scripts
 #### webDriverManagerCheck.py is a  Driver Manager Checking script to avoid downloading the Drivers (Not Implimented yet to functionality)
+#### The above scripts can be executed directly from command prompt
+		C:/ProjectLocation/testPostBusinessProcess.py
+				Or
+		From PyCharm Terminal
 
-The above scripts can be executed directly from command prompt
-C:/ProjectLocation/testPostBusinessProcess.py
-Or
-From PyCharm Terminal
+### Behave Implimentation
+#### Feature File
+	createNewPost.feature
+#### Step Definition 
+	createNewPost.py
+#### It can be executed directly from pycharm terminal with following commands
+	behave -f allure_behave.formatter:AllureFormatter -o reports/ .\feature\verifyLogin.feature
 
-Behave Implimentation
-Feature File
-createNewPost.feature
-Step Definition : createNewPost.py
-It can be executed directly from pycharm terminal with following commands
-behave -f allure_behave.formatter:AllureFormatter -o reports/ .\feature\verifyLogin.feature
-
-You can also run 
+#### You can also run which is used for R&D Purpose
 verifyHomePage.feature
 verifyLogin.feature 
 
-CreatePostAndDelete.feature is still in working progress.
+### CreatePostAndDelete.feature is still in working progress.
 
-Please let me know if you need more info on srinivas.anand1@gmail.com
+## Please let me know if you need more info on srinivas.anand1@gmail.com
 
 Note:  I am working on few more enhancement on framework like 
 		Reading from Config Files
