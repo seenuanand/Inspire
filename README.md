@@ -75,7 +75,7 @@ testPostBusinessProcess.py is a Vanila Script for analysing and it can be used a
 ### Behave Implimentation
 #### Feature File
 	createNewPost.feature
-#### Step Definition 
+#### Step Definition
 	createNewPost.py
 #### It can be executed directly from pycharm terminal with following commands
 	behave -f allure_behave.formatter:AllureFormatter -o reports/ .\feature\verifyLogin.feature
