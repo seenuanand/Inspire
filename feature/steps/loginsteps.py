@@ -15,7 +15,7 @@
 #         raise ValueError('Browser is not supported')
 #
 #
-# @when('Open the https://opensource-demo.orangehrmlive.com/ website')
+# @when('Open the https://www.inspire.com/ website')
 # def open_login_page(context):
 #     try:
 #         context.driver.get(TestData.URL)
