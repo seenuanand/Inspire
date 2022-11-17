@@ -87,11 +87,8 @@ verifyLogin.feature
 
 ## Please let me know if you need more info on srinivas.anand1@gmail.com
 
-Note:  I am working on few more enhancement on framework like 
-		Reading from Config Files
-		Page Object Model
-		Data Driven for functionality needed (As of now the data is fetched from feature file)
-		Report Creations
+### Note:  I am working on few more enhancement on framework like 
+####		Integrating with Jenkins
 
 # ***************  Allure Report ******************
 ### To Generate Report Execute with the Below Command
