@@ -93,7 +93,7 @@ Note:  I am working on few more enhancement on framework like
 		Data Driven for functionality needed (As of now the data is fetched from feature file)
 		Report Creations
 
-# ********************************  Allure Report *************************************************************
+# ***************  Allure Report ******************
 ### To Generate Report Execute with the Below Command
 #### behave -f allure_behave.formatter:AllureFormatter -o reports/ .\feature\verifyLogin.feature .\feature\createNewPo
 st.feature
