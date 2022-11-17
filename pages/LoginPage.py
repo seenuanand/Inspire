@@ -1,6 +1,7 @@
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
+
 class LoginPage(BasePage):
     TXT_USERNAME = (By.ID, "email")
     TXT_PASSWORD = (By.ID, "pw")
@@ -24,12 +25,11 @@ class LoginPage(BasePage):
         self.clear_element_text(self.TXT_PASSWORD)
         self.input_element(self.TXT_PASSWORD, pwd)
 
-    def enter_username(self,user):
+    def enter_username(self, user):
         self.input_element(self.TXT_USERNAME, user)
 
     def enter_password(self, pwd):
         self.input_element(self.TXT_PASSWORD, pwd)
-
 
     def enter_login(self):
         self.click_element(self.BTN_LOGIN)

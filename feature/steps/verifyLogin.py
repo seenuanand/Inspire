@@ -35,11 +35,16 @@ def LoginWithCredentials(context, userName, password):
 
 @when('User Clicks the Login Submit Button')
 def SubmitLogin(context):
-    context.driver.find_element(By.ID, "login_submit").click()
-    WebDriverWait(context.driver, 30).until(
-        EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Blood Pressure")))
-    time.sleep(10)
-    # Remove This used for Debugging
+    try:
+        context.driver.find_element(By.ID, "login_submit").click()
+        WebDriverWait(context.driver, 30).until(
+            EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Blood Pressure")))
+        time.sleep(10)
+        # Remove This used for Debugging
+        assert True, "Login Passed"
+    except:
+        context.driver.close()
+        assert False, "Login Failed"
 
 
 @then('User Must Successfully Login to His Dashboard Page')
@@ -50,9 +55,11 @@ def VerifySuccessfulLogin(context):
             EC.presence_of_element_located((By.XPATH, "//a[contains(.,'Sign out')]")))
         context.driver.find_element(By.XPATH, "//a[contains(.,'Sign out')]").click()
         time.sleep(5)
+        context.driver.close()
+        assert True, "Login Passed"
     except:
         # Change to Explicit Wait Here wait for some element to be available
         context.driver.close()
         assert False, "Login Failed"
-    context.driver.close()
-    assert True, "Login Passed"
+
+

@@ -10,6 +10,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from configuration.config import TestData
 from pages.HomePage import HomePage
 from pages.LoginPage import LoginPage
+from pages.UserDashboardPage import UserDashboardPage
 
 
 @given('User Launches Chrome Browser')
@@ -48,6 +49,7 @@ def VerifyHomepage(context):
         context.driver.get(TestData.URL)
         context.homePage = HomePage(context.driver)
         context.loginPage = LoginPage(context.driver)
+        context.userDashboard = UserDashboardPage(context.driver)
         context.homePage.click_Login_Button()
         # context.driver.find_element(By.ID, "logIn").click()
     except:

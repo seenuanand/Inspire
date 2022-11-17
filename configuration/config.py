@@ -9,5 +9,6 @@ class TestData:
     URL = "https://www.inspire.com/"
     USERNAME = "srinivas.anand1@gmail.com"
     PASSWORD = "Srinivas@12345"
+    USERNAME = "QA_candidate_SrinivasAnand"
 
     IMPLICIT_WAIT = 10
