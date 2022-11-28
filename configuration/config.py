@@ -11,4 +11,11 @@ class TestData:
     PASSWORD = "Srinivas@12345"
     USERNAME = "QA_candidate_SrinivasAnand"
 
+    # Database Connection
+    HOST_NAME = "localhost"
+    DATABASE_NAME = "postgres"
+    USER_NAME = "postgres"
+    USER_PASSWORD = "postgressdb"
+    PORT_NUMBER = "5432"
+
     IMPLICIT_WAIT = 10
