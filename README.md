@@ -87,8 +87,14 @@ verifyLogin.feature
 
 ## Please let me know if you need more info on srinivas.anand1@gmail.com
 
-Note:  I am working on few more enhancement on framework like 
-		Reading from Config Files
-		Page Object Model
-		Data Driven for functionality needed (As of now the data is fetched from feature file)
-		Report Creations
+### Note:  I am working on few more enhancement on framework like 
+####		Integrating with Jenkins
+
+# ***************  Allure Report ******************
+### To Generate Report Execute with the Below Command
+#### behave -f allure_behave.formatter:AllureFormatter -o reports/ .\feature\verifyLogin.feature .\feature\createNewPo
+st.feature
+### Once the Test is completed Execute
+#### allure serve reports/
+####  allure --clean generate reports/
+#### The Generated Report can befound in Project Location open Index.html in browser
